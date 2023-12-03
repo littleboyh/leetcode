@@ -1,7 +1,6 @@
 package com.hqhe;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class Problem_146_LRUCache {
@@ -48,13 +47,13 @@ public class Problem_146_LRUCache {
             node.value = value;
             return;
         }
-        node = new Node(key, value); // 新书
+        node = new Node(key, value);
         keyToNode.put(key, node);
-        addToFirst(node); // 放在最上面
-        if (keyToNode.size() > capacity) { // 书太多了
+        addToFirst(node);
+        if (keyToNode.size() > capacity) {
             Node backNode = dummy.pre;
             keyToNode.remove(backNode.key);
-            removeNode(backNode); // 去掉最后一本书
+            removeNode(backNode);
         }
     }
 
