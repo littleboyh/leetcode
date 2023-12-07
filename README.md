@@ -44,14 +44,20 @@ object equal to the specified object return zero
 object greater than the specified object return a positive integer
 
 ## Caffeine
-1. ConcurrentMap 与 Caffeine的区别
+### ConcurrentMap 与 Caffeine的区别
 `ConcurrentMap`将会持有所有加入到缓存当中的元素，直到它们被从缓存当中手动移除  
 `Caffeine`的缓存Cache 通常会被配置成自动驱逐缓存中元素，以限制其内存占用  
-2. Caffeine 具备的特点
+### Caffeine 具备的特点
+   1. 支持自动加载元素到缓存
    1. 基于容量的缓存驱逐
    2. 基于过期时间的缓存驱逐
    3. 驱逐缓存中的元素会进行通知
-3. Caffeine的驱逐策略
+### 缓存加载策略
+1. 手动加载
+2. 自动加载
+3. 手动异步加载
+4. 自动异步加载
+### Caffeine的驱逐策略
    1. https://github.com/ben-manes/caffeine/wiki/Eviction-zh-CN
    2. 在写操作，和偶尔的读操作中将会进行周期性的过期事件的执行。过期事件的调度和触发将会在O(1)的时间复杂度内完成。
-4. 
+### 
